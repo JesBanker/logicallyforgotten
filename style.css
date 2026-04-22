@@ -105,18 +105,20 @@ body.default .right {
     text-align: right;
 }
 
-.left, .center, .right {
+/*.left, .center, .right {
     margin: 0;   /* ⭐ remove vertical margin */
-}
+/*}*/
 
 @media (max-width: 600px) {
-    .line {
+    body.default.line {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .left, .center, .right {
+    body.default.left,
+    body.default.center,
+    body.default.right {
         text-align: center;
-        flex: none;
+        word-break: break-word;
     }
 }
