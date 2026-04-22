@@ -13,6 +13,7 @@ body.default{
 body.default a {
 	display: block;
 	text-decoration: none;
+	font-weight: bold;
 	color: #f2e3d8;
 }
 
@@ -84,23 +85,22 @@ body.default .aR p {
     cursor: pointer;
 }
 
-body.default .line {
+.line {
     display: flex;
     align-items: flex-end;
 }
 
-body.default .left {
+.left {
     flex: 1;
     text-align: left;
 }
-
-body.default .center {
+.center {
     flex: 1;
 	margin-left: -30%; 
     text-align: center;
 }
 
-body.default .right {
+.right {
     margin-left: auto;
     text-align: right;
 }
@@ -109,6 +109,7 @@ body.default .right {
     margin: 0;   /* ⭐ remove vertical margin */
 /*}*/
 
+/*
 @media (max-width: 600px) {
     body.default.line {
         flex-direction: column;
@@ -118,7 +119,34 @@ body.default .right {
     body.default.left,
     body.default.center,
     body.default.right {
-        text-align: left;
+        text-align: center;
         word-break: break-word;
+    }
+}
+
+@media (max-width: 600px) {
+     body.default.line {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+     body.default.line > * {
+        margin: 0;
+        text-align: center;
+    }
+}
+*/
+
+@media (max-width: 600px) {
+    .line {
+        flex-direction: column;
+    }
+
+    .line > * {
+        width: 100%;
+        min-width: 0;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+		line-height: 0.2;
     }
 }
