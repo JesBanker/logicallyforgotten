@@ -118,7 +118,7 @@ body.default .right {
     body.default.left,
     body.default.center,
     body.default.right {
-        text-align: center;
+        text-align: left;
         word-break: break-word;
     }
 }
