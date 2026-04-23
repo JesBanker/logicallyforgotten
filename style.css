@@ -1,10 +1,18 @@
-		
+:root {
+	/* 定義全站的主色調 (RGB 數值) */
+	--main-r: 242;
+	--main-g: 227;
+	--main-b: 216;
+	--main-padR: 20px;
+	--main-rgb: 242, 227, 216;
+}
+
 body.default{
 	max-width: 1200px;
 	font-size: clamp(16px, 4vw, 18px);
 	font-family: courier , serif;
 	line-height: 1.5;
-	color: #f2e3d8;
+	color: rgb(var(--main-rgb));
 	background-color: #000;
 	padding: 0 16px;
     margin: 40px auto;
@@ -14,8 +22,9 @@ body.default a {
 	display: block;
 	text-decoration: none;
 	font-weight: bold;
-	color: #f2e3d8;
-}
+	color: rgb(var(--main-rgb));
+	/*color: #f2e3d8;*/
+}1
 
 body.default p,
 body.default a {
@@ -64,7 +73,8 @@ body.default .aR p {
 }
 
 .menu a {
-    color: #f2e3d8;
+    /*color: #f2e3d8;*/
+	color: rgb(var(--main-rgb));
     text-decoration: none;
     margin: 5px 0;
 }
@@ -79,32 +89,43 @@ body.default .aR p {
     right: 20px;
 
     background: black;
-    color: #f2e3d8;
-    border: 1px solid #f2e3d8;
+    /*color: #f2e3d8;*/
+	color: rgb(var(--main-rgb));
+    border: 1px solid rgb(var(--main-rgb));
     padding: 5px 10px;
     cursor: pointer;
 }
 
 .line {
     display: flex;
+	width: 100%;
     align-items: flex-end;
+	overflow-wrap: break-word;
+	word-break: break-all;
+	justify-content: space-between;
 }
 
-.left {
-    flex: 1;
-    text-align: left;
-}
-.center {
-    flex: 1;
-	margin-left: -30%; 
-    text-align: center;
+.line a{margin: 0 !important;}
+
+
+.left   { flex: 2; min-width: 0; text-align: left; }
+.center { flex: 6; min-width: 0; text-align: center; }
+.right  { flex: 2; min-width: 0; text-align: right; }
+
+.align-lCR{
+	flex: var(--flex, 1);
+	min-width: 0;
+	text-align: var(--align, left);
+	
 }
 
-.right {
-    margin-left: auto;
-    text-align: right;
-}
-
+.c_rgba { /*color rgba*/
+			/* 加上透明度，顏色會自動跟隨主色調 */
+			color: rgba(
+			var(--rgb , --main-rgb),
+			var(--a, 1)
+			);
+		}
 /*.left, .center, .right {
     margin: 0;   /* ⭐ remove vertical margin */
 /*}*/

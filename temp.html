@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-	   <link rel="icon" type="image/png" href="logically_icon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="logically_icon.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 		
         :root {
@@ -10,6 +10,8 @@
 			--main-r: 242;
 			--main-g: 227;
 			--main-b: 216;
+			--main-padR: 20px:
+			--main-rgb: 242, 227, 216;
 		}
 		
 		body {
@@ -99,7 +101,7 @@
 		.date {
 			float: right;
 			color: rgba(252, 237, 226, 0.40);
-			padding-right: 20px;
+			padding-right: var(--padR ,var(--main-paddingR, 20px) );
 		}
 		
 		.op25 {
@@ -109,10 +111,9 @@
 		.c_rgba { /*color rgba*/
 			/* 加上透明度，顏色會自動跟隨主色調 */
 			color: rgba(
-			var(--r ,var(--main-r) ), 
-			var(--g ,var(--main-g) ),
-			var(--b ,var(--main-b) ),
-			var(--ap, 1));
+			var(--rgb , --main-rgb),
+			var(--a, 1)
+			);
 		}		
 		
 		
@@ -152,7 +153,7 @@
 	<div class="max1200">
 		<p class = "lNRText">
 			<span>『滑動』</span>
-			<span class= "c_rgba rPadding" style="--ap: 0.4;"> 23/04/26</span>
+			<span class= "c_rgba rPadding" style="--a: 0.4;"> 23/04/26</span>
 		</p>
 			<!--<hr style="margin-left: 0px; opacity: 0.5;"> -->
 			<hr class="op25"> 
@@ -176,7 +177,7 @@
 		<div class ="max1200">
 			<p>
 				test
-				<span class="date">Rtest</span>
+				<span class="date" style="--padR: 60px;">Rtest</span>
 			</p>
 		</div>
   </body>  
