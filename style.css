@@ -99,6 +99,7 @@ body.default .aR p {
 .line {
     display: flex;
 	width: 100%;
+	flex-wrap: wrap; /*allow jump line*/
     align-items: flex-end;
 	overflow-wrap: break-word;
 	word-break: break-all;
@@ -122,52 +123,41 @@ body.default .aR p {
 .c_rgba { /*color rgba*/
 			/* 加上透明度，顏色會自動跟隨主色調 */
 			color: rgba(
-			var(--rgb , --main-rgb),
+			var(--rgb , var(--main-rgb)),
 			var(--a, 1)
 			);
 		}
-/*.left, .center, .right {
-    margin: 0;   /* ⭐ remove vertical margin */
-/*}*/
-
-/*
-@media (max-width: 600px) {
-    body.default.line {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    body.default.left,
-    body.default.center,
-    body.default.right {
-        text-align: center;
-        word-break: break-word;
-    }
-}
-
-@media (max-width: 600px) {
-     body.default.line {
-        flex-direction: column;
-        gap: 6px;
-    }
-
-     body.default.line > * {
-        margin: 0;
-        text-align: center;
-    }
-}
-*/
 
 @media (max-width: 600px) {
     .line {
-        flex-direction: column;
+		line-height: 1.2 !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
     }
 
-    .line > * {
-        width: 100%;
-        min-width: 0;
-        word-break: break-word;
-        overflow-wrap: anywhere;
-		line-height: 0.2;
+    /* 1. 真正的「第一行」：標題 */
+    /* 假設它是 .line 的第一個子元素 */
+    .line > *:nth-child(1) {
+		font-size: clamp(18px, 4vw, 20px);
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        /*margin-bottom: 5px;*/
+    }
+
+    /* 2. 你的「說明」：現在它是第二行的左邊 */
+    .left {
+        flex: 1 1 auto !important; /* 讓它變回自動寬度 */
+        width: auto !important;    /* 覆蓋掉 100% */
+        min-width: 0 !important;
+        text-align: left !important;
+    }
+
+    /* 3. 你的「日期」：第二行的右邊 */
+    .right {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        white-space: nowrap !important;
+        text-align: right !important;
+        padding-left: 10px;
     }
 }
