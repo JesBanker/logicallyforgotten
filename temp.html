@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 		
-        body {
+        :root {
+			/* 定義全站的主色調 (RGB 數值) */
+			--main-r: 242;
+			--main-g: 227;
+			--main-b: 216;
+		}
+		
+		body {
 			background-color: #000000;
-			color: #f2e3d8;
+			color: rgb(var(--main-r), var(--main-g), var(--main-b));
 			
 			/* Font stays at 16px until the screen grows, 
 			then scales at 2% of screen width, 
@@ -99,9 +106,14 @@
 			opacity: 0.25;
 		}
 		
-		.opX {
-			opacity: var(--op, 1);
-		}
+		.c_rgba { /*color rgba*/
+			/* 加上透明度，顏色會自動跟隨主色調 */
+			color: rgba(
+			var(--r ,var(--main-r) ), 
+			var(--g ,var(--main-g) ),
+			var(--b ,var(--main-b) ),
+			var(--ap, 1));
+		}		
 		
 		
     </style>
@@ -140,7 +152,7 @@
 	<div class="max1200">
 		<p class = "lNRText">
 			<span>『滑動』</span>
-			<span class= "opX rPadding" style="--op: 0.4;"> 23/04/26</span>
+			<span class= "c_rgba rPadding" style="--ap: 0.4;"> 23/04/26</span>
 		</p>
 			<!--<hr style="margin-left: 0px; opacity: 0.5;"> -->
 			<hr class="op25"> 
