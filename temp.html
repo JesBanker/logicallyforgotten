@@ -42,17 +42,17 @@
 		
 		.max1200 p,
 		.max1200 h1 {
-			padding-left: 40px;
-			margin-left: 10px;
+			padding-left: 30px;
+			margin-left: 20px;
 			border-left: 1px solid #f2e3d880;
 			/*
 			border: solid;
 			*/
 		}
 		
-		.noborder h1 {
+		.noBorder h1 {
 			border-left: none !important; /*force use?*/
-			padding-left: 50px;
+			padding-left: 30px;
 		}	
 		
 		p span.voice {
@@ -65,16 +65,45 @@
 		
 		hr {
 			border: 0;
-			border-top: 1px solid #f2e3d8; /* 使用你的文字顏色 */
-			margin: 20px 0; /* 增加上下間距，讓文字有呼吸空間 */
-			opacity: 0.5;   /* 稍微透明一點點，更有高級感 */
+			border-top: 1px solid #f2e3d8; /* 使用的文字顏色 */
+			margin: 20px 0; /* 增加上下間距 */
+			opacity: 0.5;   /* 稍微透明一點點 */
+		}
+		
+		.lNRText{
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+		
+		.line {
+			display: flex;
+			align-items: flex-end
+		}
+		
+		.right {
+			text-align: right !important;
+		}
+		
+		.rPadding {
+			padding-right: 20px !important;
+		}
+		
+		.date {
+			float: right;
+			color; rgba(242, 227, 216, 0.5);
+			padding-right: 20px;
+		}
+		
+		.op25 {
+			opacity: 0.25;
 		}
 		
 		
     </style>
   </head>
   <body>
-	<div class="max1200 noborder"><h1>Temp... how do you find here?</h1></div>
+	<div class="max1200 Boborder"><h1>Temp... how do you find here?</h1></div>
     <hr>
 	<div class="max1200">
     <p>
@@ -105,10 +134,12 @@
 	</div>
 	<hr>
 	<div class="max1200">
-		<p>
-			『滑動』
+		<p class = "lNRText">
+			<span>『滑動』</span>
+			<span class= "right rPadding"> 23/04/26</span>
 		</p>
-			<hr style="margin-left: 0px; opacity: 0.5;"> 
+			<!--<hr style="margin-left: 0px; opacity: 0.5;"> -->
+			<hr class="op25"> 
 		<p>
 			滑動，結束。<br>
 			在滑，在結。<br>	
@@ -122,8 +153,15 @@
 			沒了。<br>
 			跳秒聲。<br>
 			<span class = "voice">“得去睡了。”</span>
-			<br>
 		</p>
 	</div>
+		<br>
+		<hr>
+		<div class ="max1200">
+			<p>
+				test
+				<span class="date">Rtest</span>
+			</p>
+		</div>
   </body>  
 </html>
