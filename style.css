@@ -25,11 +25,11 @@ body.default{
 }
 		
 body.default a {
-	display: block;
+	display: inline-block;
+	width: auto;
 	text-decoration: none;
 	font-weight: bold;
 	color: rgb(var(--main-rgb));
-	/*color: #f2e3d8;*/
 }
 
 .italic{
