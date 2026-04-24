@@ -16,6 +16,7 @@
 		}
 		
 		body {
+			
 			overflow-x: hidden;
 			background-color: #000000;
 			color: rgb(var(--main-r), var(--main-g), var(--main-b));
@@ -25,34 +26,27 @@
 			but stops growing at 24px */
 			font-size: clamp(16px, 1vw + 10px, 20px);
 			
-			margin: 0px auto;
 			font-family: courier, monospace;
 			line-height: 1.2;
 			text-align: left;
+			
         }
-		
-		@media (max-width: 600px){
-			body {
-				font-size: 16px;
-			}
-		}
-		
-				
-		.max1200 {
-			max-width: 1200px;
+			
+		.cMaxWidth {
 			margin: 0px auto;
-			
-			/*
-			border-left: 1px solid #f2e3d880;
-			
-			border-left: 1px solid rgba(242, 227, 216, 0.8);
-			
-			padding-right: 10px;
-			*/
+			max-width: clamp(800px, var(--max, 100%), 100%);
 		}
 		
-		.max1200 p,
-		.max1200 h1 {
+		@media(max-width: 600px){
+			.cMaxWidth{
+				font-size: 16px;
+				min-width: 95vw;
+			}
+		
+		}
+
+		.cMaxWidth p,
+		.cMaxWidth h1 {
 			padding-left: 30px;
 			margin-left: 20px;
 			border-left: 1px solid #f2e3d880;
@@ -61,7 +55,7 @@
 			*/
 		}
 		
-		.max1200 hr{
+		.cMaxWidth hr{
 			opacity: 0.25;
 		}
 		
@@ -110,10 +104,6 @@
 			padding-right: var(--padR ,var(--main-paddingR, 20px) );
 		}
 		
-		.op25 {
-			opacity: 0.25;
-		}
-		
 		.opacity {
 			opacity: var(--op,1);
 		}
@@ -126,6 +116,7 @@
 			);
 		}		
 		
+		/* this way is made by gemini
 		.game-container{
 			width: 100vw;
 			max-height: 80vh;
@@ -157,30 +148,52 @@
 		
 		@media (max-width: 600px) {
 			.game-container {
-			/* 1. 修正拼字並調整間距 */
 			padding-left: 1vw;
-			padding-right: 1vw; /* 修正為 g */
+			padding-right: 1vw; 
         
-			/* 2. 調整高度，確保在手機上不會太長 */
 			max-height: 70vh;
         
-			/* 3. 如果你用了 100vw 破框法，記得這裡也要維持 */
 			width: 100vw;
 			margin-left: -50vw;
 			left: 50%;
         
-			/* 4. 移除圓角（如果你之前有設的話，手機版通常直角比較滿） */
 			border-radius: 0;
 			}
+		}
+		*/
+		
+		.game-container{
+			margin: auto;
+			width: 90%;
+			max-width: 100vw;
+			aspect-ratio: 4 / 3;
+			max-height: 80vh;
+			border: 1px solid rgba(var(--main-rgb ,255 , 255, 255), 0.5);
+			background: rgba(var(--main-rgb ,255 , 255, 255), 0.25);
+			align: center;
+			
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-bottom: 4%;
+			
+			overflow: hidden;
+		}
+		
+		.game-container iframe{
+			width: 100%;
+			height: 100%;
+			display: block;
+			border: 0px solid blue;
 		}
 		
 
     </style>
   </head>
   <body>
-	<div class="max1200 noBorder"><h1>Temp... how do you find here?</h1></div>
+	<div class="cMaxWidth noBorder " style= "--max: 62.5%;" ><h1>Temp... how do you find here?</h1></div>
     <hr>
-	<div class="max1200">
+	<div class="cMaxWidth noBorder " style= "--max: 62.5%;" >
     <p>
       滾動, 結束.<br>
       在滾, 在結.<br>
@@ -193,7 +206,7 @@
 	</p>
 	</div>
 	<hr>
-	<div class ="max1200">
+	<div class="cMaxWidth noBorder " style= "--max: 62.5%;" >
 	 <p>
 		平靜, 應該是. <span class="voice">"說話了."</span><br>
 		不. <br>
@@ -208,7 +221,7 @@
     </p>
 	</div>
 	<hr>
-	<div class="max1200">
+	<div class="cMaxWidth noBorder " style= "--max: 62.5%;" >
 		<p class = "lNRText">
 			<span>『滑動』</span>
 			<span class= "c_rgba rPadding" style="--a: 0.4;"> 23/04/26</span>
@@ -232,7 +245,7 @@
 	</div>
 	<br>
 	<hr>
-	<div class ="max1200">
+	<div class="cMaxWidth noBorder " style= "--max: 62.5%;" >
 		<p>
 			test
 			<span class="date" style="--padR: 60px;">Rtest</span>
@@ -240,7 +253,7 @@
 	</div>
 	<br>
 	<hr>
-	<div class="max1200">
+	<div class="cMaxWidth noBorder " style= "--max: 62.5%;" >
 		<span class="noBorder"><h1>scrathch 3D i trying to</h1></span>
 		<hr>
 		<div class="game-container">
