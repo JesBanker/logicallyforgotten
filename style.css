@@ -97,7 +97,7 @@ body.default .aR p {
     display: flex;
     flex-direction: column;
 
-    background: rgb(0,0,0,);
+    background: rgb(0,0,0);
     padding: 10px;
     border: 1px solid #f2e3d8;
 }
