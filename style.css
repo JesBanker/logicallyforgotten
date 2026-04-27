@@ -203,7 +203,7 @@ body.default .aR p {
 
 .imgLine{
 	margin: 0 auto;
-    display: flex;
+    display: inline-flex;
 	width: 99%;
 	flex-wrap: wrap; /*allow jump line*/
     align-items: flex-start;
@@ -216,7 +216,8 @@ body.default .aR p {
 }
 
 
-.imgLine .left.title{flex: 0 0 clamp(100px, 25%, 250px);; width: fit-content;}
+/*.imgLine .left.title{flex: 0 0 clamp(250px, 25%, 500px);; width: fit-content;}*/
+.imgLine .left.title{flex: 0 0 var(--width-px,clamp(250px, 25%, 500px)); width: fit-content;}
 .imgLine .left.title img {
     max-width: 100%; 
 	width: 100%;
