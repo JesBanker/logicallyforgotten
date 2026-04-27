@@ -215,10 +215,9 @@ body.default .aR p {
 }
 
 
-.imgLine .left.title{flex: 0 50%; width: fit-content;}
+.imgLine .left.title{flex: 0 0 clamp(100px, 25%, 250px);; width: fit-content;}
 .imgLine .left.title img {
     max-width: 100%; 
-    min-width: 250px;
 	width: 100%;
     height: auto;
     display: block;
