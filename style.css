@@ -217,7 +217,12 @@ body.default .aR p {
 
 
 /*.imgLine .left.title{flex: 0 0 clamp(250px, 25%, 500px);; width: fit-content;}*/
-.imgLine .left.title{flex: 0 0 var(--width-px,clamp(250px, 25%, 500px)); width: fit-content;}
+.imgLine .left.title{
+	flex: 0 0 var(--width-px, clamp(250px, 25%, 500px));
+	width: fit-content;
+	max-width: 95%;
+	margin: 4px auto;
+}
 .imgLine .left.title img {
     max-width: 100%; 
 	width: 100%;
@@ -226,7 +231,7 @@ body.default .aR p {
 }
 .imgLine .describe {
     flex: 1; 
-	min-width: 0;
+	min-width: 10ch;
 }
 
 .imgLine .date.right {
@@ -235,7 +240,12 @@ body.default .aR p {
     flex: 0 0 auto;
     padding-left: 10px;
 	text-align: right;
-	margin-left: auto;
+}
+
+.imgLine .title a{
+	display: inline;
+	margin: 0;
+	padding: 0;
 }
 
 
@@ -288,39 +298,41 @@ body.default .aR p {
         padding-left: 10px;
 		margin-left: auto;
 	}
-	
+	/**/
 	.imgLine {
 		line-height: 1.2 !important;
-        display: flex !important;
+		/*
+		display: flex !important;
         flex-wrap: wrap !important;
-    }
+	}
 
-    /* 1. 真正的「第一行」：標題 */
-    /* 假設它是 .line 的第一個子元素 */
-    .imgLine > *:nth-child(1) {
+	.imgLine > *:nth-child(1) {
 		font-size: clamp(18px, 4vw, 20px);
 		min-width: 0px !important;
         flex: 0 1 50% !important;
 		margin: 0 auto;
         width: 100% !important;
-        /*margin-bottom: 5px;*/
+        margin-bottom: 5px;
+		*/
     }
 	
 	    .imgLine > *:nth-child(1) img {
-		min-width: 0px !important;
+		min-width: 0px;
 
     }
+	.imgLine .left.title{
+		min-width: 0;
+		flex: 0 1 clamp(10vw ,var(--width-px, 50%) ,90%);
+		width: 100%;
+	}
 	
-
-    /* 2. 你的「說明」：現在它是第二行的左邊 */
    .imgLine > *:nth-child(2) {
-        flex: 1 1 auto !important; /* 讓它變回自動寬度 */
-        width: auto !important;    /* 覆蓋掉 100% */
+        flex: 1 1 auto !important; 
+        width: auto !important;    
         min-width: 0 !important;
         text-align: left !important;
     }
 
-    /* 3. 你的「日期」：第二行的右邊 */
 	.imgLine > *:nth-child(3) {
         flex: 0 0 auto !important;
         width: auto !important;
