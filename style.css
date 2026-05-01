@@ -36,6 +36,7 @@ body.default{
 	box-sizing: border-box;
 	min-height: 100vh;
 	scrollbar-gutter: stable; /*hmmm?*/
+	padding-bottom: 10ch;
 }
 		
 body.default a {
